@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unplugged Canvas</title>
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #0d1b2a;
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    header {
+        background-color: #0e2238;
+        padding: 10px 0;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #4ecdc4;
+        letter-spacing: 1px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url('https://github.com/Oreo-Kuuki/Unplugged-Canvas/blob/main/Proseka.jpeg?raw=true') no-repeat center center/cover;
+}
+
+.hero::before {
+    /* Dark overlay for text contrast */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+
+.hero::after {
+    /* Bottom fade overlay */
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(16,41,62,0) 0%, rgba(16,41,62,1) 100%);
+    pointer-events: none;
+}
+
+
+
+    .title {
+        font-size: 2.2em;
+        background: rgba(14, 34, 56, 0.7);
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .subtitle {
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.9;
+
+    /* contrast bubble */
+    background: rgba(14, 34, 56, 0.6); /* semi-transparent dark bubble */
+    padding: 8px 16px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px); /* subtle glass effect */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    display: inline-block; /* shrink bubble to text width */
+}
+
+    .content {
+        background-color: #10293e;
+        padding: 20px;
+        min-height: 50vh;
+    }
+
+    .btn {
+        background-color: #4ecdc4;
+        color: #0e2238;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 15px;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #38a3a5;
+    }
+
+
+    /* Info cards container */
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    z-index: 2; /* above overlay */
+    position: relative;
+}
+
+/* Individual card styling */
+.card {
+    background: rgba(78, 205, 196, 0.2);
+    padding: 15px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* subtle glass effect */
+    color: white;
+    font-size: 1em;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+    /* Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.3); /* darker track for contrast */
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(78, 205, 196, 0.7); /* more visible */
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    border: 2px solid rgba(0,0,0,0.2); /* outline for contrast */
+    box-shadow: 0 0 4px rgba(0,0,0,0.5); /* subtle shadow for visibility */
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(78, 205, 196, 0.9);
+    box-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(78, 205, 196, 0.7) rgba(0,0,0,0.3);
+}
+
+</style>
+</head>
+<body>
+
+<header>Unplugged Canvas</header>
+
+<section class="hero">
+    <div class="title">A new way to play <br>proseka custom charts</div>
+    <a href="#charts" class="btn">Charts</a>
+
+    <!-- Info cards -->
+    <div class="info-cards">
+        <div class="card">
+            This is a Sonolus server<br>
+            to replace <b>Chart Cyanvas</b>
+        </div>
+        <div class="card">
+            Do you want to post charts?<br>
+            Sign in using Sonolus
+        </div>
+        <div class="card">
+            Do you want to make charts?<br>
+            Use MikuMikuWorld, then pack your level
+        </div>
+    </div>
+</section>
+
+<section id="charts" class="content">
+    <h2>Uploaded Charts</h2>
+    <p>No charts found.</p>
+</section>
+
+<!-- Subtitle at bottom of page -->
+<div class="subtitle">
+This server is still in development. Please dont leak the server address to anywhere like Tiktok, YouTube, Instagram, Etc
+</div>
+
+
+</body>
+</html>
+
